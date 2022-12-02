@@ -1,0 +1,78 @@
+
+.display, .popuptext{
+  border: 1px solid black;
+  margin: 50px 50px 20px 50px;
+  padding: 20px;
+}
+.container .typeInf h1, .container .display h1, .form-popup-edit h1{
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+  background-color: #043456;
+  color: white;
+}
+.container .typeInf .form input, 
+.form-popup-edit .form input, 
+.typeInf .form select,
+.form-popup-edit .form select{
+  width: 100%;
+}
+.container .typeInf .form label{
+  font-weight: 500;
+  margin-top: 10px;
+}
+.container .typeInf .form button{
+  margin-top: 15px;
+  border: none;
+  color: white;
+  font-weight: 500;
+}
+/* .container .typeInf .dropdown-toggle{
+  position: absolute;
+  right: 20px;
+  top: 5px;
+} */
+
+
+.container .display table{
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.container .display table tr, th, td{
+  border: 1px solid black;
+}
+.container .display table button.add{
+  position: absolute;
+  bottom: 0;
+}
+/* create */
+.create{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.create button{
+  position: absolute;
+  right: 50px;
+}
+/* edit */
+.edit-container, .create-container{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  align-items: center;
+}
+.form-popup-edit, .typeInf{
+  border: 1px solid black;
+  padding: 20px;
+}
+.form-popup-edit button{
+  margin: 20px 0;
+}
