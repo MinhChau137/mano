@@ -1,32 +1,36 @@
-
-.display, .popuptext{
+.display, .popuptext {
   border: 1px solid black;
   margin: 50px 50px 20px 50px;
   padding: 20px;
 }
-.container .typeInf h1, .container .display h1, .form-popup-edit h1{
+
+.container .typeInf h1, .container .display h1, .form-popup-edit h1 {
   font-size: 20px;
   font-weight: 500;
   padding: 10px;
   background-color: #043456;
   color: white;
 }
-.container .typeInf .form input, 
-.form-popup-edit .form input, 
+
+.container .typeInf .form input,
+.form-popup-edit .form input,
 .typeInf .form select,
-.form-popup-edit .form select{
+.form-popup-edit .form select {
   width: 100%;
 }
-.container .typeInf .form label{
+
+.container .typeInf .form label {
   font-weight: 500;
   margin-top: 10px;
 }
-.container .typeInf .form button{
+
+.container .typeInf .form button {
   margin-top: 15px;
   border: none;
   color: white;
   font-weight: 500;
 }
+
 /* .container .typeInf .dropdown-toggle{
   position: absolute;
   right: 20px;
@@ -34,30 +38,57 @@
 } */
 
 
-.container .display table{
+.container .display table {
   width: 100%;
   text-align: center;
   position: relative;
 }
-.container .display table tr, th, td{
+
+.container .display table tr, th, td {
   border: 1px solid black;
 }
-.container .display table button.add{
+
+.container .display table button.add {
   position: absolute;
   bottom: 0;
 }
+
+.display .SFCs .idService {
+  display: inline-flex;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.display .SFCs .idService button {
+  background-color: white;
+  border: none;
+}
+.display .SFCs .idService p{
+  margin: 0;
+}
+
+.display .SFCs .idService button i {
+  font-size: 20px;
+  display: block;
+}
+.SFC{
+  margin: 20px 0;
+}
+
 /* create */
-.create{
+.create {
   position: relative;
   width: 100%;
   height: auto;
 }
-.create button{
+
+.create button {
   position: absolute;
   right: 50px;
 }
+
 /* edit */
-.edit-container, .create-container{
+.edit-container, .create-container {
   display: none;
   position: absolute;
   top: 0;
@@ -69,10 +100,12 @@
   background-color: white;
   align-items: center;
 }
-.form-popup-edit, .typeInf{
+
+.form-popup-edit, .typeInf {
   border: 1px solid black;
   padding: 20px;
 }
-.form-popup-edit button{
+
+.form-popup-edit button {
   margin: 20px 0;
 }

@@ -1,0 +1,34 @@
+.route{
+  border: 1px solid black;
+  margin: 50px 50px 20px 50px;
+  padding: 20px;
+}
+.route h1{
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+  background-color: #043456;
+  color: white;
+}
+.route .id{
+  display: inline-flex;
+  justify-content: center;
+  font-weight: 700;
+}
+.route .id p{
+  margin: 0;
+}
+.route .id button{
+  padding: 0 15px;
+}
+.route .id button i{
+  font-size: 20px;
+}
+.route table{
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.route table tr, th, td {
+  border: 1px solid black;
+}

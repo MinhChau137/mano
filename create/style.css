@@ -1,0 +1,32 @@
+.createSFC {
+  border: 1px solid black;
+  margin: 50px 50px 20px 50px;
+  padding: 20px;
+}
+
+.createSFC h1 {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+  background-color: #043456;
+  color: white;
+}
+
+.createSFC input {
+  width: 100%;
+}
+
+.createSFC label {
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.createSFC button {
+  margin-top: 15px;
+  border: none;
+  color: white;
+  font-weight: 500;
+}
+.createSFC button i{
+  font-size: 22px;
+}

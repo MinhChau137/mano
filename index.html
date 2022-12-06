@@ -7,6 +7,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./asset/css/fontawesome.css">
+  <link rel="stylesheet" href="../mano/create/style.css">
+
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -24,15 +27,15 @@
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Create</a>
+          <a class="nav-link" href="../mano/create/index.html">Create</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Delete</a>
+          <a class="nav-link" href="./route/index.html">Route</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+          <a class="nav-link dropdown-toggle" href="#" id="dropdownmenu" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="dropdownId">
+          <div class="dropdown-menu" aria-labelledby="dropdownmenu">
             <a class="dropdown-item" href="#">Action 1</a>
             <a class="dropdown-item" href="#">Action 2</a>
           </div>
@@ -47,20 +50,9 @@
   <div class="container">
     <div class="display">
       <h1>List services</h1>
-      <table>
-        <thead>
-          <tr class="header" id="row">
-            <th class="id">ID</th>
-            <th class="name">Service</th>
-            <th class="class">Node affinity</th>
-            <th class="class">Route</th>
-            <th class="action">Action
-            </th>
-          </tr>
-        </thead>
-        <tbody id="result">
-        </tbody>
-      </table>
+      <div class="SFCs" id="result">
+
+      </div>
     </div>
     <div class="create">
       <button onclick="openCreate()" class="btn btn-outline-success">Create</button>
@@ -71,30 +63,45 @@
         <div class="form-container form">
           <label for="nameImageEdit">Name</label><br>
           <input type="text" id="nameImageEdit" placeholder="Name of image:tag"><br>
-          <label for="nodeEdit">Node</label> <br/>
+          <label for="nodeEdit">Node</label> <br />
           <select id="nodeEdit">
           </select> <br>
           <label for="routeEdit">Route</label><br>
           <input type="text" id="routeEdit" placeholder="Route"><br>
-      
+
           <button type="submit" class="btn btn-outline-success" onclick="editData()">Submit</button>
           <button type="button" class="btn btn-outline-warning cancel" onclick="closeEdit()">Close</button>
         </div>
       </div>
     </div>
     <div class="create-container" id="create">
-      <div class="typeInf container">
+      <div class="createSFC container">
         <h1>Create service</h1>
         <div class="form">
-          <label for="nameImage">Name</label><br>
-          <input type="text" id="nameImage" placeholder="Name of image:tag"><br>
-          <label for="node">Node</label> <br/>
-          <select id="node">
-          </select> <br>
-          <label for="route">Route</label><br>
-          <input type="text" id="route" placeholder="Route"><br>
-          <button onclick="addService()" class="btn btn-success">ADD</button>
-          <button type="button" class="btn btn-warning cancel" onclick="closeCreate()">Close</button>
+          <label for="idService">ID</label><br>
+          <div class="addSvs">
+            <div class="dropdown">
+              <input class="dropdown-toggle" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+              <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <span class="dropdown-item" onclick=setData(this)>1</span>
+                <span class="dropdown-item" onclick=setData(this)>2</span>
+              </div>
+            </div>
+            <label for="nameImage">Name</label><br>
+            <input type="text" id="nameImage" placeholder="Name of image:tag"><br>
+            <label for="node">Node</label> <br />
+            <select id="node">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select> <br>
+            <label for="port">Port</label><br>
+            <input type="text" id="port" placeholder="Port"><br>
+          </div>
+          <button class="btn btn-group btn-dark add"><i class="fa-solid fa-plus"></i></button>
+          <button class="btn btn-group btn-success" onclick="addService()">ADD</button>
+          <button class="btn btn-group btn-warning cancel" onclick="closeCreate()">Close</button>
         </div>
       </div>
     </div>
