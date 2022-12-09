@@ -1,41 +1,60 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Route</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="../asset/css/fontawesome.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-    <div class="container">
-      <div class="route">
-        <h1>Route</h1>
-        <div class="id">
-          <button class="btn"><i class="fa-solid fa-plus"></i></button>
-          <p>ID: <span id="idService" idService = ${data.id}>${data.id}</span></p>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Name services</th>
-              <th>Route</th>
-            </tr>
-          </thead>
-          <tbody>
 
-          </tbody>
-        </table>
+<head>
+  <title>Route</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../asset/css/fontawesome.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="route">
+      <h1>Route</h1>
+    </div>
+    <div class="createRoute">
+      <h1>Create route</h1>
+      <div class="form">
+        <label for="idSFC">ID SFC</label><br>
+        <select id="idSFC" onchange="changeSFC()">
+          <option value="default" selected>Select ID SFC</option>
+        </select><br>
+        <div class="selectService" id="selectService">
+          <label for="nameService1" onchange="changeSv1()">Service 1</label><br>
+          <select name="nameService" id="nameService1">
+  
+          </select><br>
+          <label for="nameService2">Service 2</label><br>
+          <select name="nameService" id="nameService2" onchange="changeSv2()">
+  
+          </select><br>
+          <label for="route">Route</label><br>
+          <input type="text" id="route" placeholder="Route"><br>
+  
+          <button type="submit" class="btn btn-outline-success" onclick="createRoute()">Submit</button>
+          <button type="button" class="btn btn-outline-warning cancel" onclick="closeCreateRoute()">Close</button>
+        </div>
       </div>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="../main.js"></script>
-  </body>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>

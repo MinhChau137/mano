@@ -13,40 +13,11 @@ function generateString(length) {
 
   return result;
 }
+
+
 // define SFCs
-let SFCs = [
-  {
-    id: 1,
-    services: [
-      {
-        name: "sv1",
-        node: "1",
-        port: "80",
-      },
-      {
-        name: "sv2",
-        node: "1",
-        port: "80",
-      },
-    ],
-  },
-  {
-    id: 2,
-    services: [
-      {
-        name: "sv21",
-        node: "1",
-        port: "80",
-      },
-      {
-        name: "sv22",
-        node: "1",
-        port: "80",
-      },
-    ],
-  },
-];
-let nodes = ["1", "2", "3"];
+import {routeSvs, SFCs, nodes} from "./data.js"
+
 // show SFCs
 function showSFC() {
   let show = "";
@@ -63,7 +34,6 @@ function showSFC() {
             <th>Name</th>
             <th>Node</th>
             <th>Port</th>
-            <th>Action</th>
           </tr>
           </thead>
           <tbody id = ${data.id}>
@@ -72,34 +42,30 @@ function showSFC() {
         </div>
     `;
   });
-
-  document.getElementById("result").innerHTML = show;
+  document.getElementById("listSvs").innerHTML += show;
 }
 showSFC();
+
 // show services base on ID
-function showService(){
-  SFCs.map(data=>{
-    let showS = '';
+function showService() {
+  SFCs.map((data) => {
+    let showS = "";
     data.services.map((data) => {
       showS += `
         <tr>
         <td>${data.name}</td>
         <td>${data.node}</td>
-        <td>${data.port}</td>
-        <td>
-          <button class = "btn btn-warning popup" onclick = "openEdit(this)" edit = "${data.name}">Edit</button>
-          <button class = "btn btn-danger deleteData" delete = "${data.name}" onclick = "deleteData(this)">Delete</button>
-        </td>          
+        <td>${data.port}</td>         
       </tr>
       `;
     });
     document.getElementById(data.id).innerHTML = showS;
-  })
+  });
 }
 showService();
 
 // get data from dropdown to input
-function setData(e){
+function setData(e) {
   document.getElementById("dropdownId").value = e.innerHTML;
 }
 // show node from array node
@@ -119,43 +85,17 @@ showNode();
 function openCreate() {
   document.getElementById("create").style.display = "flex";
 }
-function closeCreate() {
-  document.getElementById("create").style.display = "none";
-}
-function addService() {
-  let addNew = {
-    id: document.getElementById("dropdownId").value,
-    services: [
-      {
-        name: document.getElementById("nameImage").value,
-        node: document.getElementById("node").value,
-        port: document.getElementById("port").value,
-      }
-    ]
-  };
-  let addCurent = {
-    name: document.getElementById("nameImage").value,
-    node: document.getElementById("node").value,
-    port: document.getElementById("port").value,
-  };
-  let count = 0;
-  SFCs.map(data=>{
-    console.log(document.getElementById("dropdownId").value)
-    if (document.getElementById("dropdownId").value == data.id){
-      console.log(data.services)
-      data.services.push(addCurent);
-      count ++;
-      console.log(data.services)
-    }
-  })
-  if(count == 0){
-    SFCs.push(addNew);
-  }
-  showSFC();
-  showService();
-  closeCreate();
-}
 
+// route
+function openRoute() {
+  SFCs.map((data) => {
+    if (data.services.length > 2 && routeSvs.length < data.services.length/2) {
+      // window.location = "./route/index.html";
+      alert("Hay route cho cac services");
+    }
+  });
+}
+openRoute();
 
 function openEdit(e) {
   document.getElementById("myForm").style.display = "flex";

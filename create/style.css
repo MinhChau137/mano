@@ -30,3 +30,13 @@
 .createSFC button i{
   font-size: 22px;
 }
+.create {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.create button {
+  position: absolute;
+  right: 50px;
+}

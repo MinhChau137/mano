@@ -1,0 +1,33 @@
+.edit {
+  border: 1px solid black;
+  margin: 50px 50px 20px 50px;
+  padding: 20px;
+}
+
+.edit h1 {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+  background-color: #043456;
+  color: white;
+}
+
+/* sfc */
+.SFC .firstDisplay{
+  display: flex;
+  justify-items: center;
+
+}
+.SFC p{
+  margin-bottom: 0;
+  font-size: 16px;
+}
+.SFC button{
+  border: none;
+  background-color: white;
+  font-weight: 500;
+  margin-right: 15px;
+}
+.SFC button i{
+  font-size: 16px;
+}

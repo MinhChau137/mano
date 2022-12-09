@@ -11,39 +11,41 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../asset/css/fontawesome.css">
 </head>
 
 <body>
-  <div class="container">
-    <div class="createSFC">
+  <div class="create-container container" id="create">
+    <div class="createSFC container">
       <h1>Create service</h1>
-        <div class="form">
-          <label for="idService">ID</label><br>
+      <div class="form">
+        <label for="idService">ID</label><br>
+        <div class="addSvs" id="addSvs">
           <div class="dropdown">
             <input class="dropdown-toggle" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
             <div class="dropdown-menu" aria-labelledby="dropdownId">
-              <span class="dropdown-item" onclick=setData(this)>Action 1</span>
-              <span class="dropdown-item" onclick=setData(this)>Action 2</span>
+              <span class="dropdown-item" onclick=setData(this)>1</span>
+              <span class="dropdown-item" onclick=setData(this)>2</span>
             </div>
           </div>
-          <label for="nameImage">Name</label><br>
-          <input type="text" id="nameImage" placeholder="Name of image:tag"><br>
-          <label for="node">Node</label> <br />
-          <select id="node">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select> <br>
-          <label for="route">Port</label><br>
-          <input type="text" id="port" placeholder="Port"><br>
-          <a href="../index.html" onclick="addService()">
-            <button class="btn btn-success" >ADD</button>
-          </a>
-          <a href="../index.html">
-            <button type="button" class="btn btn-warning cancel" onclick="closeCreate()">Close</button>
-          </a>
+          <div class="inforSv">
+            <label for="nameImage">Name</label><br>
+            <input type="text" id="nameImage" placeholder="Name of image:tag"><br>
+            <label for="node">Node</label> <br />
+            <select id="node">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select> <br>
+            <label for="port">Port</label><br>
+            <input type="text" id="port" placeholder="Port"><br>
+          </div>
         </div>
+        <button class="btn btn-group btn-dark add" onclick="moreService()"><i class="fa-solid fa-plus"></i></button>
+        <button class="btn btn-group btn-success" onclick="addService()">ADD</button>
+        <button class="btn btn-group btn-warning cancel" onclick="closeCreate()">Close</button>
+      </div>
     </div>
   </div>
   <!-- Optional JavaScript -->
@@ -57,8 +59,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  <script src="./main.js"></script>
-  <script src="../main.js"></script>
+  <script type="module" src="./main.js"></script>
+  <script type="module" src="../main.js"></script>
 </body>
 
 </html>
