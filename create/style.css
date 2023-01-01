@@ -40,3 +40,10 @@
   position: absolute;
   right: 50px;
 }
+.addedSv{
+  border-bottom: 1px dotted;
+  display: none;
+}
+.addedSv p{
+  margin-bottom: 0;
+}

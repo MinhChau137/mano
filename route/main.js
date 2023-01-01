@@ -15,6 +15,7 @@ getIDSFC();
 
 function getServiceRoute(id) {
   let showNameService = "";
+  let showPort = "";
   SFCs.map((data) => {
     if (data.id == id) {
       document.getElementById("selectService").style.display = "block";
@@ -23,10 +24,16 @@ function getServiceRoute(id) {
         <option value="${data.name}">${data.name}</option>
         `;
       });
+      data.ports.map((data) => {
+        showPort += `
+        <option value="${data}">${data}</option>
+        `;
+      });
     }
   });
   document.getElementById("nameService1").innerHTML = showNameService;
   document.getElementById("nameService2").innerHTML = showNameService;
+  document.getElementById("port").innerHTML = showPort;
 }
 
 window.changeSFC = function changeSFC() {
@@ -47,6 +54,12 @@ window.changeSv1 = function changeSv1() {
 
 window.changeSv2 = function changeSv2() {
   let select = document.getElementById("nameService2");
+  let value = select.options[select.selectedIndex].value;
+  select.value = value;
+};
+
+window.changePort = function changePort() {
+  let select = document.getElementById("port");
   let value = select.options[select.selectedIndex].value;
   select.value = value;
 };
@@ -123,15 +136,15 @@ window.createRoute = function createRoute() {
       let id = "showRoute_".concat(document.getElementById("idSFC").value);
       document.getElementById(id).innerHTML += showRoute;
     }
-  } else{
+  } else {
     alert("2 service trung nhau");
   }
 
-  if(routeSvs.length != 0){
-    document.getElementsByClassName("route")[0].style.display="block"
+  if (routeSvs.length != 0) {
+    document.getElementsByClassName("route")[0].style.display = "block";
   }
 };
 
 window.closeCreateRoute = function closeCreateRoute() {
   window.location = "../index.html";
-}
+};

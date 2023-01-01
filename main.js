@@ -16,8 +16,9 @@ function generateString(length) {
 
 
 // define SFCs
-import {routeSvs, SFCs, nodes} from "./data.js"
+import {routeSvs, SFCs} from "./data.js"
 
+console.log(SFCs)
 // show SFCs
 function showSFC() {
   let show = "";
@@ -68,18 +69,6 @@ showService();
 function setData(e) {
   document.getElementById("dropdownId").value = e.innerHTML;
 }
-// show node from array node
-function showNode() {
-  let show = "";
-  nodes.map((data) => {
-    show += `
-          <option value="${data}">${data}</option>
-        `;
-  });
-  document.getElementById("node").innerHTML = show;
-  document.getElementById("nodeEdit").innerHTML = show;
-}
-showNode();
 
 // create
 function openCreate() {
@@ -95,7 +84,7 @@ function openRoute() {
     }
   });
 }
-openRoute();
+// openRoute();
 
 function openEdit(e) {
   document.getElementById("myForm").style.display = "flex";

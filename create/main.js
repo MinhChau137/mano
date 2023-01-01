@@ -1,12 +1,13 @@
-import {SFCs} from "../data.js"
+import { SFCs, nodes } from "../data.js";
 
-window.setData = function setData(e){
+window.setData = function setData(e) {
   document.getElementById("dropdownId").value = e.innerHTML;
-}
+};
 
 window.closeCreate = function closeCreate() {
-  window.location = "../index.html";
-}
+  // window.history.replaceState('', '', 'http://127.0.0.1:5500/index.html');
+  window.location.replace("../index.html")
+};
 window.addService = function addService() {
   let addNew = {
     id: document.getElementById("dropdownId").value,
@@ -26,7 +27,6 @@ window.addService = function addService() {
   let count = 0;
   SFCs.map((data) => {
     if (document.getElementById("dropdownId").value == data.id) {
-      console.log(data.services);
       data.services.push(addCurent);
       count++;
     }
@@ -34,23 +34,43 @@ window.addService = function addService() {
   if (count == 0) {
     SFCs.push(addNew);
   }
-  closeCreate();
-}
+  // closeCreate();
+};
+console.log(SFCs);
 window.moreService = function moreService() {
+  document.getElementById("addedSv").style.display = "block";
   let show = "";
   show += `
-  <div class="inforSv">
-    <label for="nameImage">Name</label><br>
-    <input type="text" id="nameImage" placeholder="Name of image:tag"><br>
-    <label for="node">Node</label> <br />
-    <select id="node">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-    </select> <br>
-    <label for="port">Port</label><br>
-    <input type="text" id="port" placeholder="Port"><br>
-  </div>
+  <li>Service: ${document.getElementById("nameImage").value} - Node: ${
+    document.getElementById("node").value
+  } - Port: ${document.getElementById("port").value} - ID SFC: ${
+    document.getElementById("dropdownId").value
+  }</li>
   `;
-  document.getElementById("addSvs").innerHTML += show;
+  document.getElementById("listAddedSv").innerHTML += show;
+
+  // add data
+  addService();
+  // reset data in input
+  document.getElementById("dropdownId").value = "";
+  document.getElementById("port").value = "";
+  document.getElementById("node").value = "";
+  document.getElementById("nameImage").value = "";
+};
+// submit
+window.submitAdd = function su58bmitAdd() {
+  addService();
+  closeCreate();
+};
+// show node from array node
+function showNode() {
+  let show = "";
+  nodes.map((data) => {
+    show += `
+          <option value="${data}">${data}</option>
+        `;
+  });
+  document.getElementById("node").innerHTML = show;
+  // document.getElementById("nodeEdit").innerHTML = show;
 }
+showNode();
